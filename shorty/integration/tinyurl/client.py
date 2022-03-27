@@ -1,9 +1,13 @@
 from urllib import response
+from shorty.config.settings import CONFIG
+
 import requests
 import logging
 
 LOGGER_BASENAME = "tinyurl_client"
 logger = logging.getLogger(LOGGER_BASENAME)
+
+tinyHostname = CONFIG['tinyurl']['hostname']
 
 
 class TinyClient():
@@ -16,6 +20,9 @@ class TinyClient():
 
     def short(self, url):
         """Documentation goes here"""
+
+        tiny_url_endpoint = "{0}/create".format(tinyHostname)
+
         headers = {
             'content-type': 'application/json',
             'Authorization': 'Bearer {0}'.format(self.__access_token)
@@ -27,7 +34,7 @@ class TinyClient():
         }
 
         response = requests.post(
-            'https://api.tinyurl.com/create',
+            tiny_url_endpoint,
             headers=headers,
             json=data)
 
