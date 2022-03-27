@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "shorty"
+version = "0.1.0"
+description = "URL shortener API project, integrated with 3rd party URL shortener providers, preparing for the interview with Plum!"
+authors = ["Anastasios Kentominas <akentominas@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+flask = "^1.1.2"
+flask-restplus = "^0.13.0"
+gunicorn = "^20.0.4"
+requests = "^2.25.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
