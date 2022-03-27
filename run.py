@@ -1,4 +1,4 @@
-from shorty.app import create_app
+from shorty.apis.app import create_app
 
 app = create_app()
 
