@@ -6,10 +6,11 @@ authors = ["Anastasios Kentominas <akentominas@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-flask = "^1.1.2"
-flask-restplus = "^0.13.0"
+flask = "*"
+flask-restx = "*"
 gunicorn = "^20.0.4"
 requests = "^2.25.1"
+typing_extensions = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
