@@ -7,11 +7,15 @@ import logging
 LOGGER_BASENAME = "tinyurl_client"
 logger = logging.getLogger(LOGGER_BASENAME)
 
-tinyHostname = CONFIG['tinyurl']['hostname']
+tiny_hostname = CONFIG['tinyurl']['hostname']
 
 
 class TinyClient():
-    """Represents tinyurl API client
+    """Represents tinyurl API client, holds the endpoint and access_token
+    to talk to the TinyURL API.
+
+    Attributes:
+        access_token: The token generated from the TinyURL account
 
     """
 
@@ -21,7 +25,7 @@ class TinyClient():
     def short(self, url):
         """Documentation goes here"""
 
-        tiny_url_endpoint = "{0}/create".format(tinyHostname)
+        tiny_url_endpoint = "{0}/create".format(tiny_hostname)
 
         headers = {
             'content-type': 'application/json',

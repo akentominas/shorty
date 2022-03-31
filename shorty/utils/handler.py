@@ -10,7 +10,7 @@ from shorty.integration.bitly.client import BitlyClient
 from shorty.integration.tinyurl.client import TinyClient
 from shorty.config.settings import CONFIG
 from shorty.constants.errors import ERROR_CODES
-from flask import jsonify, request
+import requests
 
 logger = logging.getLogger()
 
@@ -26,9 +26,7 @@ class Handler():
 
     def handle_shortener_provider(self):
 
-        payload = request.get_json(force=True)
-
-        if PROVIDER in payload and payload[PROVIDER] == BITLY_URL_PROVIDER:
+        if PROVIDER in self.payload and self.payload[PROVIDER] == BITLY_URL_PROVIDER:
             response = self.optionA()
             if response.status_code != 200:
                 error_message = 'Error: {0}'.format(response.json())
@@ -36,7 +34,7 @@ class Handler():
                 raise ERROR_CODES[response.status_code](error_message)
             return response
 
-        elif PROVIDER in payload and payload[PROVIDER] == TINY_URL_PROVIDER:
+        elif PROVIDER in self.payload and self.payload[PROVIDER] == TINY_URL_PROVIDER:
             response = self.optionB()
             if response.status_code != 200:
                 error_message = 'Error: {0}'.format(response.json())

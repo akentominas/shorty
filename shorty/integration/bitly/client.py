@@ -7,11 +7,15 @@ import logging
 LOGGER_BASENAME = "bitly_client"
 logger = logging.getLogger(LOGGER_BASENAME)
 
-bitlyHostname = CONFIG['bitly']['hostname']
+bitly_hostname = CONFIG['bitly']['hostname']
 
 
 class BitlyClient():
-    """Represents bitly API client
+    """Represents bitly API client, holds the endpoint and access_token
+    to talk to the Bitly API.
+
+    Attributes:
+        access_token: The token generated from the Bitly account
 
     """
 
@@ -20,7 +24,7 @@ class BitlyClient():
 
     def short(self, url):
         """Documentation goes here"""
-        tiny_url_endpoint = "{0}/v4/shorten".format(bitlyHostname)
+        tiny_url_endpoint = "{0}/v4/shorten".format(bitly_hostname)
 
         headers = {
             'content-type': 'application/json',
