@@ -54,6 +54,11 @@ Please build the image:
 ```bash
 docker build -t shorty .
 ```
+Rename the .env.sample to .env
+```bash
+cp .env.sample .env
+```
+
 Run the container:
 
 ```bash
