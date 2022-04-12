@@ -1,4 +1,3 @@
-Hey Plum! :wave:
 
 CONTENTS OF THIS FILE
 ---------------------
