@@ -108,11 +108,6 @@ pytest
 ```
 
 
-READ THE SOFTWARE DESIGN DOCUMENT
----------------------------------
-
-I will send a simple SSD that i have written along with the github repo link to this project, to Vasilis
-and i will ask him to forward it to you. I would appreciate if you could have a look on it.
 
 MAINTAINERS
 -----------
