@@ -15,7 +15,7 @@ CONTENTS OF THIS FILE
 SHORTY
 ------
 
-Shorty is a URL shortener API prepared for the interview with Plum.
+Shorty is a URL shortener API.
 The shortener API is accepting a url to shorten and the client can optionally decide on which URL shortener provider to use.
 
 PREREQUISITES
